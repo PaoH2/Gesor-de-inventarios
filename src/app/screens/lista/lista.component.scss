@@ -1,0 +1,109 @@
+$pastel-mint: #A8D8C7;
+$pastel-yellow: #F7EAB4;
+$pastel-blue-gray: #BCCCDC;
+$text-dark: #5D6D7E;
+$container-bg: #ffffff;
+$background-color: #f7f3e9; // Se mantiene el fondo beige
+$shadow-color: rgba(0, 0, 0, 0.05); // Una sombra más suave
+
+// --- Estilo del contenedor principal (host) ---
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 64px);
+  background-color: $background-color;
+  padding: 2rem;
+}
+
+// --- Contenedor principal de la página (el "cuadro") ---
+.container {
+  background-color: $container-bg;
+  padding: 5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px $shadow-color;
+  width: 100%;
+  max-width: 900px;
+}
+
+// --- Estilo para el encabezado de la sección ---
+h2 {
+  color: $text-dark;
+  font-weight: 300;
+}
+
+.btn-primary {
+  background-color: $pastel-mint;
+  border-color: $pastel-mint;
+  color: $text-dark;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 0.5rem 0.5rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: darken($pastel-mint, 10%);
+    border-color: darken($pastel-mint, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn-back{
+    padding-right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $pastel-blue-gray;
+    border-color: #ffffff;
+  }
+
+// --- Estilos para la tabla ---
+.table-responsive {
+  margin-top: 1.5rem;
+}
+
+.table {
+  vertical-align: middle;
+
+  // Cabecera de la tabla con color pastel
+  thead.table-dark th {
+    background-color: $pastel-blue-gray;
+    border-color: darken($pastel-blue-gray, 5%);
+    color: $text-dark; // Texto oscuro para legibilidad
+  }
+
+  tbody tr {
+    animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
+  }
+}
+
+// --- Botón de Editar con color pastel ---
+.btn-warning {
+  background-color: $pastel-yellow;
+  color: $text-dark;
+  border: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: darken($pastel-yellow, 10%);
+    transform: scale(1.05);
+  }
+}
+
+// --- Animación para las filas ---
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

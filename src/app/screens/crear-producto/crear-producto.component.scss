@@ -1,0 +1,93 @@
+$beige-background: #f7f3e9;
+$form-background: #ffffff;
+$primary-color: #5d8a86;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$border-color: #ddd;
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: $beige-background;
+  padding: 2rem;
+}
+
+// --- Estilo del "Cuadro" que delimita el formulario ---
+.form-container {
+  background-color: $form-background;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px $shadow-color;
+  border: 1px solid $border-color;
+  width: 100%;
+  max-width: 550px;
+  transition: all 0.3s ease-in-out;
+
+  // --- Estilos anidados para los elementos dentro del formulario ---
+  .form-title {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  .invalid-feedback{
+    color:red;
+  }
+
+  .form-divider {
+    margin-bottom: 2rem;
+    border-color: $primary-color;
+    opacity: 0.5;
+  }
+
+  .form-label {
+    padding: 0.5rem;
+  }
+
+  .btn-back{
+    padding-right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $primary-color;
+    border-color: #ffffff;
+  }
+
+  .form-control{
+    margin-block: 0.5rem;
+  }
+
+  // Estilo para los campos de entrada cuando están enfocados
+  .form-control:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 0.25rem rgba($primary-color, 0.25);
+  }
+
+  .d-grid {
+    display: flex;
+    justify-content: center;
+  }
+
+  // Estilo para el botón principal
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    width: auto;
+    min-width: 200px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+      border-color: darken($primary-color, 10%);
+    }
+
+    &:disabled {
+      background-color: lighten($primary-color, 20%);
+      border-color: lighten($primary-color, 20%);
+    }
+  }
+}

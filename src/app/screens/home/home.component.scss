@@ -1,0 +1,84 @@
+$button-bg-color: #B7DEE8;
+$button-text-color: #2c3e50;
+$button-bg-hover: darken($button-bg-color, 10%);
+
+// AQUÍ ESTÁ LA CORRECCIÓN: Definimos el color base como una variable SCSS
+$navbar-text-base-color: #5D4037;
+
+// --- Contenedor principal ---
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  height: calc(100vh - 64px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+// --- Mensaje de bienvenida ---
+.welcome-message {
+  text-align: center;
+  color: $navbar-text-base-color; // Usamos la variable SCSS aquí
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+}
+
+// --- Contenedor de acciones ("el cuadro") ---
+.actions-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  width: 300px;
+}
+
+.actions-title {
+  color: $navbar-text-base-color; // Usamos la variable SCSS aquí también
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.75rem;
+}
+
+// --- Grid para los botones ---
+.button-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+// --- Estilo de los botones ---
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background-color: $button-bg-color;
+  color: $button-text-color;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  i {
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+  }
+
+  &:hover {
+    background-color: $button-bg-hover;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
